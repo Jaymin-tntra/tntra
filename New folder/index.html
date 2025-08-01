@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang-en="Real Estate | Luxury Properties" data-lang-ar="العقارات | عقارات فاخرة">Real Estate | Luxury Properties</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bs-body-font-family: 'Inter', sans-serif;
+            --bs-dark-rgb: 41, 51, 66; /* Custom dark color */
+            --bs-light-rgb: 250, 250, 250; /* Custom light color */
+            --bs-secondary-rgb: 108, 117, 125;
+        }
+
+        body {
+            background-color: #f8f9fa;
+        }
+
+        /* --- Header --- */
+        .navbar {
+            background-color: #ffffff;
+        }
+        .navbar-brand {
+            font-weight: 700;
+            letter-spacing: 0.05rem;
+            color: rgb(var(--bs-dark-rgb));
+        }
+        .nav-link {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #555;
+        }
+        .nav-link:hover {
+            color: rgb(var(--bs-dark-rgb));
+        }
+        .btn-lang.active {
+            background-color: rgb(var(--bs-dark-rgb));
+            color: #fff;
+        }
+
+        /* --- Hero Carousel --- */
+        .hero-carousel .carousel-item {
+            height: 70vh;
+            background-size: cover;
+            background-position: center;
+        }
+        .hero-carousel .carousel-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        .hero-carousel .carousel-caption {
+            top: 50%;
+            transform: translateY(-50%);
+            bottom: auto;
+        }
+        .hero-carousel .badge {
+            background-color: rgba(255, 255, 255, 0.2);
+            font-weight: 500;
+        }
+        .hero-carousel h1 {
+            font-weight: 300;
+            letter-spacing: 0.1rem;
+        }
+        .hero-carousel .btn-outline-light:hover {
+            color: #000;
+        }
+
+        /* --- Search Bar --- */
+        .search-bar-section {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            margin-top: -50px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* --- General Section Styling --- */
+        .section-title {
+            font-weight: 300;
+        }
+
+        /* --- Community Cards --- */
+        .community-card {
+            position: relative;
+            overflow: hidden;
+            border: none;
+        }
+        .community-card .card-img {
+            transition: transform 0.4s ease;
+        }
+        .community-card:hover .card-img {
+            transform: scale(1.05);
+        }
+        .community-card .card-img-overlay {
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 60%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+        .community-card .card-title, .community-card .card-subtitle {
+             color: white;
+        }
+        .community-card .card-text {
+            color: #ccc;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            max-height: 0;
+            overflow: hidden;
+        }
+        .community-card:hover .card-text {
+            opacity: 1;
+            transform: translateY(0);
+            max-height: 100px; /* Adjust as needed */
+        }
+        
+        /* --- Footer --- */
+        footer a {
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+        }
+        footer a:hover {
+            color: white !important;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="shadow-sm">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="#">Real Estate</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-lang-en="About Us" data-lang-ar="من نحن">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-lang-en="Latest Projects" data-lang-ar="أحدث المشاريع">Latest Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-lang-en="Communities" data-lang-ar="المجتمعات">Communities</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-lang-en="Sustainability" data-lang-ar="الاستدامة">Sustainability</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-center gap-3">
+                        <span class="d-none d-md-inline text-muted small" data-lang-en="Call" data-lang-ar="اتصل">Call</span>
+                        <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-sm btn-lang" data-lang="en">EN</button>
+                            <button type="button" class="btn btn-sm btn-lang" data-lang="ar">AR</button>
+                        </div>
+                        <a href="#" class="btn btn-dark btn-sm" data-lang-en="Enquiry Now" data-lang-ar="استفسر الآن">Enquiry Now</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="heroCarousel" class="carousel slide hero-carousel" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop');">
+                    <div class="carousel-caption text-center">
+                        <span class="badge rounded-pill px-3 py-1 mb-3" data-lang-en="NEW LAUNCH" data-lang-ar="إطلاق جديد">NEW LAUNCH</span>
+                        <h1 class="display-4 mb-3" data-lang-en="The Grandeur Villas" data-lang-ar="فلل جراندور">The Grandeur Villas</h1>
+                        <p class="lead opacity-75 mb-4" data-lang-en="Experience unparalleled luxury living." data-lang-ar="جرب معيشة فاخرة لا مثيل لها.">Experience unparalleled luxury living.</p>
+                        <a href="#" class="btn btn-outline-light btn-lg" data-lang-en="Learn More" data-lang-ar="اعرف المزيد">Learn More</a>
+                    </div>
+                </div>
+                <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop');">
+                    <div class="carousel-caption text-center">
+                        <span class="badge rounded-pill px-3 py-1 mb-3" data-lang-en="WATERFRONT LIVING" data-lang-ar="حياة على الواجهة المائية">WATERFRONT LIVING</span>
+                        <h1 class="display-4 mb-3" data-lang-en="Marina Bay Residences" data-lang-ar="مساكن مارينا باي">Marina Bay Residences</h1>
+                        <p class="lead opacity-75 mb-4" data-lang-en="Stunning views, exceptional amenities." data-lang-ar="إطلالات خلابة، مرافق استثنائية.">Stunning views, exceptional amenities.</p>
+                        <a href="#" class="btn btn-outline-light btn-lg" data-lang-en="Learn More" data-lang-ar="اعرف المزيد">Learn More</a>
+                    </div>
+                </div>
+                <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=1974&auto=format&fit=crop');">
+                    <div class="carousel-caption text-center">
+                        <span class="badge rounded-pill px-3 py-1 mb-3" data-lang-en="URBAN SANCTUARY" data-lang-ar="ملاذ حضري">URBAN SANCTUARY</span>
+                        <h1 class="display-4 mb-3" data-lang-en="Downtown Park Towers" data-lang-ar="أبراج داون تاون بارك">Downtown Park Towers</h1>
+                        <p class="lead opacity-75 mb-4" data-lang-en="Your oasis in the heart of the city." data-lang-ar="واحتك في قلب المدينة.">Your oasis in the heart of the city.</p>
+                        <a href="#" class="btn btn-outline-light btn-lg" data-lang-en="Learn More" data-lang-ar="اعرف المزيد">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </section>
+
+        <div class="search-bar-section p-4 shadow rounded-3 container">
+            <form>
+                <div class="row row-cols-2 row-cols-lg-5 g-3 align-items-end">
+                    <div class="col">
+                        <label for="propertyType" class="form-label text-uppercase small fw-medium text-secondary" data-lang-en="Property Type" data-lang-ar="نوع العقار">Property Type</label>
+                        <select class="form-select" id="propertyType">
+                            <option selected data-lang-en="Any" data-lang-ar="أي">Any</option>
+                            <option value="1" data-lang-en="Apartment" data-lang-ar="شقة">Apartment</option>
+                            <option value="2" data-lang-en="Villa" data-lang-ar="فيلا">Villa</option>
+                            <option value="3" data-lang-en="Townhouse" data-lang-ar="تاون هاوس">Townhouse</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label for="bedroom" class="form-label text-uppercase small fw-medium text-secondary" data-lang-en="Bedroom" data-lang-ar="غرفة نوم">Bedroom</label>
+                        <select class="form-select" id="bedroom">
+                            <option selected data-lang-en="Any" data-lang-ar="أي">Any</option>
+                            <option value="1" data-lang-en="Studio" data-lang-ar="استوديو">Studio</option>
+                            <option value="2" data-lang-en="1 Bedroom" data-lang-ar="غرفة نوم واحدة">1 Bedroom</option>
+                            <option value="3" data-lang-en="2+ Bedrooms" data-lang-ar="غرفتين نوم أو أكثر">2+ Bedrooms</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label for="priceRange" class="form-label text-uppercase small fw-medium text-secondary" data-lang-en="Price Range" data-lang-ar="نطاق السعر">Price Range</label>
+                        <select class="form-select" id="priceRange">
+                            <option selected data-lang-en="Any" data-lang-ar="أي">Any</option>
+                            <option value="1">500K - 1M</option>
+                            <option value="2">1M - 2M</option>
+                            <option value="3">2M+</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label for="location" class="form-label text-uppercase small fw-medium text-secondary" data-lang-en="Location" data-lang-ar="الموقع">Location</label>
+                        <select class="form-select" id="location">
+                            <option selected data-lang-en="All Communities" data-lang-ar="كل المجمعات">All Communities</option>
+                            <option value="1">Downtown Dubai</option>
+                            <option value="2">Dubai Marina</option>
+                            <option value="3">Dubai Hills Estate</option>
+                        </select>
+                    </div>
+                    <div class="col col-lg-2">
+                        <button type="submit" class="btn btn-secondary w-100" data-lang-en="Search" data-lang-ar="بحث">
+                            <i class="bi bi-search me-1"></i> Search
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <section class="py-5 mt-4">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card border-0 h-100">
+                           <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?q=80&w=2070&auto=format&fit=crop" class="card-img-top" alt="Royale Apartments">
+                            <div class="card-body">
+                                <h5 class="card-title" data-lang-en="Royale Apartments" data-lang-ar="شقق رويال">Royale Apartments</h5>
+                                <p class="card-text text-secondary" data-lang-en="Elegant living spaces in the city center." data-lang-ar="مساحات معيشة أنيقة في وسط المدينة.">Elegant living spaces in the city center.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card border-0 h-100">
+                           <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?q=80&w=2070&auto=format&fit=crop" class="card-img-top" alt="Palm Heights">
+                            <div class="card-body">
+                                <h5 class="card-title" data-lang-en="Palm Heights" data-lang-ar="بالم هايتس">Palm Heights</h5>
+                                <p class="card-text text-secondary" data-lang-en="Exclusive residences with breathtaking views." data-lang-ar="مساكن حصرية بإطلالات خلابة.">Exclusive residences with breathtaking views.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card border-0 h-100">
+                           <img src="https://images.unsplash.com/photo-1558036117-15d82a90b9b1?q=80&w=1974&auto=format&fit=crop" class="card-img-top" alt="Jumeirah Villas">
+                            <div class="card-body">
+                                <h5 class="card-title" data-lang-en="Jumeirah Villas" data-lang-ar="فلل جميرا">Jumeirah Villas</h5>
+                                <p class="card-text text-secondary" data-lang-en="A perfect blend of modern design and comfort." data-lang-ar="مزيج مثالي من التصميم الحديث والراحة.">A perfect blend of modern design and comfort.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5 bg-white">
+            <div class="container">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6">
+                        <h2 class="display-5 section-title mb-4" data-lang-en="Designed for a Premium Lifestyle" data-lang-ar="مصممة لأسلوب حياة فاخر">Designed for a Premium Lifestyle</h2>
+                        <p class="text-secondary lead" data-lang-en="Our properties are more than just homes; they are gateways to a life of comfort, luxury, and endless possibilities. Discover communities with world-class amenities." data-lang-ar="عقاراتنا أكثر من مجرد منازل؛ إنها بوابات لحياة من الراحة والفخامة والإمكانيات اللامحدودة. اكتشف مجتمعات بمرافق عالمية المستوى.">Our properties are more than just homes; they are gateways to a life of comfort, luxury, and endless possibilities. Discover communities with world-class amenities.</p>
+                        <a href="#" class="btn btn-dark mt-3" data-lang-en="View All Properties" data-lang-ar="عرض كل العقارات">View All Properties</a>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="row g-3">
+                            <div class="col-6">
+                                <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=2070&auto=format&fit=crop" class="img-fluid rounded" alt="Property Hills">
+                            </div>
+                            <div class="col-6" style="margin-top: 2rem;">
+                                <img src="https://images.unsplash.com/photo-1600585154084-4e5fe7c39198?q=80&w=1974&auto=format&fit=crop" class="img-fluid rounded" alt="Property Polo">
+                            </div>
+                            <div class="col-12">
+                                <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=2070&auto=format&fit=crop" class="img-fluid rounded" alt="Creek Views">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5">
+            <div class="container">
+                <h2 class="text-center display-5 section-title mb-5" data-lang-en="Our Communities" data-lang-ar="مجتمعاتنا">Our Communities</h2>
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+                    <div class="col">
+                        <div class="card community-card text-white">
+                            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=800&fit=crop&crop=center" class="card-img" alt="Beachfront Resort">
+                            <div class="card-img-overlay">
+                                <h5 class="card-title" data-lang-en="Beachfront Living" data-lang-ar="الحياة على الشاطئ">Beachfront Living</h5>
+                                <h6 class="card-subtitle mb-2 fw-light" data-lang-en="Dubai Harbour" data-lang-ar="ميناء دبي">Dubai Harbour</h6>
+                                <p class="card-text small" data-lang-en="Wake up to the serene views of the Arabian Gulf." data-lang-ar="استيقظ على مناظر هادئة للخليج العربي.">Wake up to the serene views of the Arabian Gulf.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                         <div class="card community-card text-white">
+                            <img src="https://images.unsplash.com/photo-1502672023488-70e25813eb80?w=800&h=800&fit=crop&crop=center" class="card-img" alt="Urban Life">
+                            <div class="card-img-overlay">
+                                <h5 class="card-title" data-lang-en="Urban Elegance" data-lang-ar="الأناقة الحضرية">Urban Elegance</h5>
+                                <h6 class="card-subtitle mb-2 fw-light" data-lang-en="Downtown Dubai" data-lang-ar="وسط مدينة دبي">Downtown Dubai</h6>
+                                <p class="card-text small" data-lang-en="Live in the bustling heart of the city." data-lang-ar="عش في قلب المدينة النابض بالحياة.">Live in the bustling heart of the city.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                         <div class="card community-card text-white">
+                            <img src="https://images.unsplash.com/photo-1512916194211-3f2b7f5f7de3?w=800&h=800&fit=crop&crop=center" class="card-img" alt="Golf Community">
+                            <div class="card-img-overlay">
+                                <h5 class="card-title" data-lang-en="Golf Estates" data-lang-ar="مجمعات الجولف">Golf Estates</h5>
+                                <h6 class="card-subtitle mb-2 fw-light" data-lang-en="Dubai Hills" data-lang-ar="تلال دبي">Dubai Hills</h6>
+                                <p class="card-text small" data-lang-en="Perfect for enthusiasts of the green." data-lang-ar="مثالي لعشاق المساحات الخضراء.">Perfect for enthusiasts of the green.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                         <div class="card community-card text-white">
+                            <img src="https://images.unsplash.com/photo-1459767129954-1b1c1f9b9ace?w=800&h=800&fit=crop&crop=center" class="card-img" alt="Creek Community">
+                            <div class="card-img-overlay">
+                                <h5 class="card-title" data-lang-en="Creekside Vistas" data-lang-ar="إطلالات الخور">Creekside Vistas</h5>
+                                <h6 class="card-subtitle mb-2 fw-light" data-lang-en="Dubai Creek" data-lang-ar="خور دبي">Dubai Creek</h6>
+                                <p class="card-text small" data-lang-en="A harmonious blend of nature and modern living." data-lang-ar="مزيج متناغم من الطبيعة والحياة العصرية.">A harmonious blend of nature and modern living.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-dark text-white-50 pt-5 pb-4">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-4">
+                    <h5 class="text-white">Real Estate</h5>
+                    <p class="small" data-lang-en="Building communities for life with world-class properties and developments across Dubai and beyond." data-lang-ar="نبني مجتمعات للحياة من خلال عقارات وتطويرات عالمية المستوى في دبي وخارجها.">Building communities for life with world-class properties and developments across Dubai and beyond.</p>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h5 class="text-white" data-lang-en="Company" data-lang-ar="الشركة">Company</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white-50" data-lang-en="About Us" data-lang-ar="من نحن">About Us</a></li>
+                        <li><a href="#" class="text-white-50" data-lang-en="Careers" data-lang-ar="وظائف">Careers</a></li>
+                        <li><a href="#" class="text-white-50" data-lang-en="News" data-lang-ar="أخبار">News</a></li>
+                    </ul>
+                </div>
+                 <div class="col-6 col-lg-2">
+                    <h5 class="text-white" data-lang-en="Support" data-lang-ar="الدعم">Support</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white-50" data-lang-en="Contact Us" data-lang-ar="اتصل بنا">Contact Us</a></li>
+                        <li><a href="#" class="text-white-50" data-lang-en="Privacy Policy" data-lang-ar="سياسة الخصوصية">Privacy Policy</a></li>
+                        <li><a href="#" class="text-white-50" data-lang-en="Terms" data-lang-ar="الشروط">Terms</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                     <h5 class="text-white" data-lang-en="Contact" data-lang-ar="اتصل">Contact</h5>
+                     <p class="small mb-1">Dubai, United Arab Emirates</p>
+                     <p class="small mb-1">Phone: +971 4 367 3333</p>
+                     <p class="small mb-1">Email: info@realestate.com</p>
+                </div>
+            </div>
+            <hr class="mt-4">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+                <p class="small mb-3 mb-md-0" data-lang-en="© 2025 Real Estate. All Rights Reserved." data-lang-ar="© 2025 العقارات. جميع الحقوق محفوظة.">© 2025 Real Estate. All Rights Reserved.</p>
+                <div class="d-flex gap-4">
+                    <a href="#" class="text-white-50"><i class="bi bi-facebook fs-5"></i></a>
+                    <a href="#" class="text-white-50"><i class="bi bi-instagram fs-5"></i></a>
+                    <a href="#" class="text-white-50"><i class="bi bi-twitter-x fs-5"></i></a>
+                    <a href="#" class="text-white-50"><i class="bi bi-linkedin fs-5"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const langButtons = document.querySelectorAll('.btn-lang');
+        const htmlEl = document.documentElement;
+
+        function setLanguage(lang) {
+            htmlEl.setAttribute('lang', lang);
+            htmlEl.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+
+            // Update all translatable elements
+            document.querySelectorAll('[data-lang-en]').forEach(el => {
+                const key = `lang-${lang}`;
+                // Use innerText for elements like buttons, innerHTML for more complex ones if needed
+                if (el.dataset[key]) {
+                    if(el.tagName === 'BUTTON' || el.tagName === 'A' || el.tagName === 'SPAN') {
+                       // Preserve icons in buttons
+                       const icon = el.querySelector('i');
+                       if (icon) {
+                           el.innerHTML = icon.outerHTML + ' ' + el.dataset[key];
+                       } else {
+                           el.innerText = el.dataset[key];
+                       }
+                    } else if (el.tagName === 'OPTION' && el.value !== "") {
+                        el.innerText = el.dataset[key];
+                    } else if (el.tagName !== 'OPTION') { // Avoid changing placeholder option text
+                        el.innerText = el.dataset[key];
+                    }
+                }
+            });
+
+            // Update active state on buttons
+            langButtons.forEach(btn => {
+                if (btn.dataset.lang === lang) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        langButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const selectedLang = this.dataset.lang;
+                setLanguage(selectedLang);
+            });
+        });
+
+        // Initialize language on page load
+        const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+        setLanguage(savedLang);
+    });
+    </script>
+</body>
+</html>

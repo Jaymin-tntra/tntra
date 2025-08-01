@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate | Luxury Properties</title>
+     <meta name="robots" content="noindex, nofollow" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/rtl.css" rel="stylesheet" id="rtl-stylesheet" disabled>
+</head>
+<body>
+
+    <header class="sticky-top shadow-sm">
+        <nav class="navbar navbar-expand-lg bg-off-white py-3">
+            <div class="container">
+                <a class="navbar-brand text-primary-violet" href="index.html" id="brand-name">Real Estate</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="nav-about">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="nav-projects">Latest Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="nav-communities">Communities</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="nav-sustainability">Sustainability</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-center gap-3">
+                        <span class="d-none d-md-inline text-charcoal-gray small" id="nav-call">Call</span>
+                        <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-sm btn-lang" data-lang="en">EN</button>
+                            <button type="button" class="btn btn-sm btn-lang" data-lang="ar">AR</button>
+                        </div>
+                        <a href="enquiry.html" class="btn btn-primary btn-sm px-4 py-2" id="nav-inquiry">Inquiry Now</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="heroCarousel" class="carousel slide hero-carousel" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop');">
+                    <div class="carousel-caption text-center">
+                        <span class="badge rounded-pill px-3 py-1 mb-3" id="hero-badge-1">NEW LAUNCH</span>
+                        <h1 class="display-4 mb-3" id="hero-title-1">The Grandeur Villas</h1>
+                        <p class="lead opacity-75 mb-4" id="hero-desc-1">Experience unparalleled luxury living.</p>
+                        <a href="#" class="btn btn-outline-light btn-lg" id="hero-btn-1">Learn More</a>
+                    </div>
+                </div>
+                <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop');">
+                    <div class="carousel-caption text-center">
+                        <span class="badge rounded-pill px-3 py-1 mb-3" id="hero-badge-2">WATERFRONT LIVING</span>
+                        <h1 class="display-4 mb-3" id="hero-title-2">Marina Bay Residences</h1>
+                        <p class="lead opacity-75 mb-4" id="hero-desc-2">Stunning views, exceptional amenities.</p>
+                        <a href="#" class="btn btn-outline-light btn-lg" id="hero-btn-2">Learn More</a>
+                    </div>
+                </div>
+                <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=1974&auto=format&fit=crop');">
+                    <div class="carousel-caption text-center">
+                        <span class="badge rounded-pill px-3 py-1 mb-3" id="hero-badge-3">URBAN SANCTUARY</span>
+                        <h1 class="display-4 mb-3" id="hero-title-3">Downtown Park Towers</h1>
+                        <p class="lead opacity-75 mb-4" id="hero-desc-3">Your oasis in the heart of the city.</p>
+                        <a href="#" class="btn btn-outline-light btn-lg" id="hero-btn-3">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </section>
+
+        <div class="search-bar-section p-4 shadow rounded-3 container fade-in-section">
+            <form>
+                <div class="row row-cols-2 row-cols-lg-5 g-3 align-items-end">
+                    <div class="col">
+                        <label for="propertyType" class="form-label text-uppercase small fw-medium text-charcoal-gray" id="search-property-type">Property Type</label>
+                        <select class="form-select" id="propertyType">
+                            <option selected id="search-any-1">Any</option>
+                            <option value="1" id="search-apartment">Apartment</option>
+                            <option value="2" id="search-villa">Villa</option>
+                            <option value="3" id="search-townhouse">Townhouse</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label for="bedroom" class="form-label text-uppercase small fw-medium text-charcoal-gray" id="search-bedroom">Bedroom</label>
+                        <select class="form-select" id="bedroom">
+                            <option selected id="search-any-2">Any</option>
+                            <option value="1" id="search-studio">Studio</option>
+                            <option value="2" id="search-1bed">1 Bedroom</option>
+                            <option value="3" id="search-2plus">2+ Bedrooms</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label for="priceRange" class="form-label text-uppercase small fw-medium text-charcoal-gray" id="search-price-range">Price Range</label>
+                        <select class="form-select" id="priceRange">
+                            <option selected id="search-any-3">Any</option>
+                            <option value="1">500K - 1M</option>
+                            <option value="2">1M - 2M</option>
+                            <option value="3">2M+</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label for="location" class="form-label text-uppercase small fw-medium text-charcoal-gray" id="search-location">Location</label>
+                        <select class="form-select" id="location">
+                            <option selected id="search-all-communities">All Communities</option>
+                            <option value="1">Downtown Dubai</option>
+                            <option value="2">Dubai Marina</option>
+                            <option value="3">Dubai Hills Estate</option>
+                        </select>
+                    </div>
+                    <div class="col col-lg-2">
+                        <button type="submit" class="btn btn-secondary w-100" id="search-btn">
+                            <i class="bi bi-search me-1"></i> <span id="search-btn-text">Search</span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- New Properties Section -->
+        <section class="py-5 fade-in-section">
+            <div class="container">
+                <h2 class="text-center display-5 section-title mb-3" id="new-properties-title">New Properties</h2>
+                <p class="text-center section-subtitle mb-5" id="new-properties-subtitle">Discover the latest additions to our portfolio, designed for modern living.</p>
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 property-block">
+                    <div class="col">
+                        <div class="card shadow-lg stagger-fade-in-item">
+                            <img src="https://plus.unsplash.com/premium_photo-1661918376346-bb775e744fcb?q=80&w=1974&auto=format&fit=crop"
+                                class="card-img-top" alt="Modern Apartment" onerror="this.onerror=null;this.src='https://placehold.co/600x400/EDEDED/2F2F38?text=Image+Not+Found';">
+                            <div class="card-body">
+                                <h5 class="card-title" id="property-title-1">Luxury Downtown Apartment</h5>
+                                <p class="card-text" id="property-desc-1">Spacious 3-bedroom apartment with panoramic city views.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card shadow-lg stagger-fade-in-item">
+                            <img src="https://images.unsplash.com/photo-1653861281679-06846bf69b8d?q=80&w=1974&auto=format&fit=crop"
+                                class="card-img-top" alt="Suburban Villa" onerror="this.onerror=null;this.src='https://placehold.co/600x400/EDEDED/2F2F38?text=Image+Not+Found';">
+                            <div class="card-body">
+                                <h5 class="card-title" id="property-title-2">Elegant Family Villa</h5>
+                                <p class="card-text" id="property-desc-2">A beautiful 5-bedroom villa with a private garden, ideal for families.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card shadow-lg stagger-fade-in-item">
+                            <img src="https://images.unsplash.com/photo-1448630360428-65456885c650?q=80&w=2070&auto=format&fit=crop"
+                                class="card-img-top" alt="Modern Townhouse" onerror="this.onerror=null;this.src='https://placehold.co/600x400/EDEDED/2F2F38?text=Image+Not+Found';">
+                            <div class="card-body">
+                                <h5 class="card-title" id="property-title-3">Contemporary Townhouse</h5>
+                                <p class="card-text" id="property-desc-3">Stylish 4-bedroom townhouse with modern design and smart home features.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Designed for a Premium Lifestyle Section -->
+        <section class="py-5 mt-4 bg-soft-lilac fade-in-section">
+            <div class="container">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6 premium-lifestyle-text">
+                        <h2 class="display-5 section-title mb-4" id="premium-title">Designed for a<br/> Premium Lifestyle</h2>
+                        <p class="text-charcoal-gray lead" id="premium-desc">Our properties are more than just homes; they are gateways to a life of comfort, luxury, and endless possibilities. Discover communities with world-class amenities, stunning architecture, and vibrant surroundings.</p>
+                        <a href="#" class="btn btn-primary mt-3 px-4 py-2" id="premium-btn">View All Properties</a>
+                    </div>
+                    <div class="col-lg-6 premium-lifestyle-images">
+                        <div class="row g-3">
+                            <div class="col-6">
+                                <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=2070&auto=format&fit=crop"
+                                    class="img-fluid rounded-xl shadow-md stagger-fade-in-item" alt="Modern Villa" onerror="this.onerror=null;this.src='https://placehold.co/600x400/EDEDED/2F2F38?text=Image+Not+Found';">
+                            </div>
+                            <div class="col-6">
+                                <img src="https://images.unsplash.com/photo-1600585154084-4e5fe7c39198?q=80&w=1974&auto=format&fit=crop"
+                                    class="img-fluid rounded-xl shadow-md stagger-fade-in-item" alt="Luxury Apartment Interior" onerror="this.onerror=null;this.src='https://placehold.co/600x400/EDEDED/2F2F38?text=Image+Not+Found';">
+                            </div>
+                            <div class="col-6">
+                                <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=2070&auto=format&fit=crop"
+                                    class="img-fluid rounded-xl shadow-md stagger-fade-in-item" alt="High-rise Building" onerror="this.onerror=null;this.src='https://placehold.co/600x400/EDEDED/2F2F38?text=Image+Not+Found';">
+                            </div>
+                            <div class="col-6">
+                                <img src="https://images.unsplash.com/photo-1558036117-15d82a90b9b1?q=80&w=1974&auto=format&fit=crop"
+                                    class="img-fluid rounded-xl shadow-md stagger-fade-in-item" alt="Spacious Living Room" onerror="this.onerror=null;this.src='https://placehold.co/600x400/EDEDED/2F2F38?text=Image+Not+Found';">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Communities Section -->
+        <section class="py-5 fade-in-section">
+            <div class="container">
+                <h2 class="text-center display-5 section-title mb-3" id="communities-title">Our Communities</h2>
+                <p class="text-center section-subtitle mb-5" id="communities-subtitle">Explore the vibrant neighborhoods and exclusive estates that define luxury living.</p>
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                    <div class="col">
+                        <div class="card community-card text-white shadow-lg stagger-fade-in-item">
+                            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=800&fit=crop&crop=center"
+                                class="card-img" alt="Beachfront Resort" onerror="this.onerror=null;this.src='https://placehold.co/800x800/2F2F38/EDEDED?text=Image+Not+Found';">
+                            <div class="card-img-overlay">
+                                <h5 class="card-title" id="community-title-1">Beachfront Living</h5>
+                                <h6 class="card-subtitle mb-2" id="community-subtitle-1">Dubai Harbour</h6>
+                                <p class="card-text small" id="community-desc-1">Wake up to the serene views of the Arabian Gulf, with direct beach access and world-class amenities.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card community-card text-white shadow-lg stagger-fade-in-item">
+                            <img src="https://images.unsplash.com/photo-1502672023488-70e25813eb80?w=800&h=800&fit=crop&crop=center"
+                                class="card-img" alt="Urban Life" onerror="this.onerror=null;this.src='https://placehold.co/800x800/2F2F38/EDEDED?text=Image+Not+Found';">
+                            <div class="card-img-overlay">
+                                <h5 class="card-title" id="community-title-2">Urban Elegance</h5>
+                                <h6 class="card-subtitle mb-2" id="community-subtitle-2">Downtown Dubai</h6>
+                                <p class="card-text small" id="community-desc-2">Live in the bustling heart of the city, surrounded by iconic landmarks and vibrant cultural experiences.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card community-card text-white shadow-lg stagger-fade-in-item">
+                            <img src="https://images.unsplash.com/photo-1512916194211-3f2b7f5f7de3?w=800&h=800&fit=crop&crop=center"
+                                class="card-img" alt="Golf Community" onerror="this.onerror=null;this.src='https://placehold.co/800x800/2F2F38/EDEDED?text=Image+Not+Found';">
+                            <div class="card-img-overlay">
+                                <h5 class="card-title" id="community-title-3">Golf Estates</h5>
+                                <h6 class="card-subtitle mb-2" id="community-subtitle-3">Dubai Hills</h6>
+                                <p class="card-text small" id="community-desc-3">Perfect for enthusiasts of the green, with sprawling golf courses and serene landscapes.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card community-card text-white shadow-lg stagger-fade-in-item">
+                            <img src="https://images.unsplash.com/photo-1459767129954-1b1c1f9b9ace?w=800&h=800&fit=crop&crop=center"
+                                class="card-img" alt="Creek Community" onerror="this.onerror=null;this.src='https://placehold.co/800x800/2F2F38/EDEDED?text=Image+Not+Found';">
+                            <div class="card-img-overlay">
+                                <h5 class="card-title" data-lang-en="Creekside Vistas" data-lang-ar="إطلالات الخور">
+                                    Creekside Vistas</h5>
+                                <h6 class="card-subtitle mb-2" data-lang-en="Dubai Creek" data-lang-ar="خور دبي">Dubai
+                                    Creek</h6>
+                                <p class="card-text small"
+                                    data-lang-en="A harmonious blend of nature and modern living, offering stunning waterfront views."
+                                    data-lang-ar="مزيج متناغم من الطبيعة والحياة العصرية، يوفر إطلالات خلابة على الواجهة المائية.">A
+                                    harmonious blend of nature and modern living, offering stunning waterfront views.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card community-card text-white shadow-lg stagger-fade-in-item">
+                            <img src="https://plus.unsplash.com/premium_photo-1682913884645-3cd2e794908e?w=800&h=800&fit=crop&crop=center"
+                                class="card-img" alt="Beachfront Resort" onerror="this.onerror=null;this.src='https://placehold.co/800x800/2F2F38/EDEDED?text=Image+Not+Found';">
+                            <div class="card-img-overlay">
+                                <h5 class="card-title" data-lang-en="Beachfront Living" data-lang-ar="الحياة على الشاطئ">
+                                    Waterfront Villas</h5>
+                                <h6 class="card-subtitle mb-2" data-lang-en="Dubai Harbour" data-lang-ar="ميناء دبي">Palm
+                                    Jumeirah</h6>
+                                <p class="card-text small"
+                                    data-lang-en="Wake up to the serene views of the Arabian Gulf, with direct beach access and world-class amenities."
+                                    data-lang-ar="استيقظ على مناظر هادئة للخليج العربي، مع وصول مباشر إلى الشاطئ ومرافق عالمية المستوى.">Exclusive
+                                    villas offering private beach access and stunning sea views.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card community-card text-white shadow-lg stagger-fade-in-item">
+                            <img src="https://images.unsplash.com/photo-1709153880820-67d99c1ab76d?w=800&h=800&fit=crop&crop=center"
+                                class="card-img" alt="Urban Life" onerror="this.onerror=null;this.src='https://placehold.co/800x800/2F2F38/EDEDED?text=Image+Not+Found';">
+                            <div class="card-img-overlay">
+                                <h5 class="card-title" data-lang-en="Urban Elegance" data-lang-ar="الأناقة الحضرية">Desert
+                                    Oasis</h5>
+                                <h6 class="card-subtitle mb-2" data-lang-en="Downtown Dubai" data-lang-ar="وسط مدينة دبي">
+                                    Al Barari</h6>
+                                <p class="card-text small"
+                                    data-lang-en="Live in the bustling heart of the city, surrounded by iconic landmarks and vibrant cultural experiences."
+                                    data-lang-ar="عش في قلب المدينة النابض بالحياة، محاطًا بالمعالم الشهيرة والتجارب الثقافية النابضة بالحياة.">Tranquil
+                                    and luxurious living amidst lush greenery and desert landscapes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="pt-5 pb-4">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-4">
+                    <h5 class="text-off-white" id="footer-brand">Real Estate</h5>
+                    <p class="small text-mist-gray" id="footer-desc">Building communities for life with world-class properties and developments across Dubai and beyond.</p>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h5 class="text-off-white" id="footer-company">Company</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-mist-gray" id="footer-about">About Us</a></li>
+                        <li><a href="#" class="text-mist-gray" id="footer-careers">Careers</a></li>
+                        <li><a href="#" class="text-mist-gray" id="footer-news">News</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h5 class="text-off-white" id="footer-support">Support</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="enquiry.html" class="text-mist-gray" id="footer-contact">Contact Us</a></li>
+                        <li><a href="#" class="text-mist-gray" id="footer-privacy">Privacy Policy</a></li>
+                        <li><a href="#" class="text-mist-gray" id="footer-terms">Terms</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="text-off-white" id="footer-contact-title">Contact</h5>
+                    <p class="small mb-1 text-mist-gray">Dubai, United Arab Emirates</p>
+                    <p class="small mb-1 text-mist-gray">Phone: +971 4 367 3333</p>
+                    <p class="small mb-1 text-mist-gray">Email: info@realestate.com</p>
+                </div>
+            </div>
+            <hr class="mt-4 border-mist-gray">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+                <p class="small mb-3 mb-md-0 text-mist-gray" id="footer-copyright">© 2025 Real Estate. All Rights Reserved.</p>
+                <div class="d-flex gap-4 social-icons">
+                    <a href="#" class="text-mist-gray"><i class="bi bi-facebook fs-5"></i></a>
+                    <a href="#" class="text-mist-gray"><i class="bi bi-instagram fs-5"></i></a>
+                    <a href="#" class="text-mist-gray"><i class="bi bi-twitter-x fs-5"></i></a>
+                    <a href="#" class="text-mist-gray"><i class="bi bi-linkedin fs-5"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/language-switcher.js"></script>
+</body>
+</html>

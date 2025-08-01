@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang-en="Enquiry | Real Estate" data-lang-ar="استفسار | العقارات">Enquiry | Real Estate</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bs-body-font-family: 'Inter', sans-serif;
+            --bs-dark-rgb: 41, 51, 66;
+            --bs-light-rgb: 250, 250, 250;
+        }
+
+        body {
+            background-color: #f8f9fa;
+        }
+
+        /* --- Header --- */
+        .navbar { background-color: #ffffff; }
+        .navbar-brand { font-weight: 700; letter-spacing: 0.05rem; color: rgb(var(--bs-dark-rgb)); }
+        .nav-link { font-size: 0.9rem; font-weight: 500; color: #555; }
+        .nav-link:hover { color: rgb(var(--bs-dark-rgb)); }
+        .btn-lang.active { background-color: rgb(var(--bs-dark-rgb)); color: #fff; }
+
+        /* --- Enquiry Hero Section --- */
+        .enquiry-hero {
+            position: relative;
+            height: 40vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        .enquiry-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('https://images.unsplash.com/photo-1560179707-f14e90ef3623?q=80&w=2073&auto=format&fit=crop') no-repeat center center;
+            background-size: cover;
+            filter: brightness(0.6);
+            z-index: -1;
+        }
+        .enquiry-hero h1 {
+            font-weight: 300;
+            letter-spacing: 0.1rem;
+        }
+
+        /* --- Form Styles --- */
+        .form-section {
+            margin-top: -60px;
+            position: relative;
+            z-index: 10;
+        }
+        .form-check-label {
+            font-weight: normal;
+        }
+        .form-section h5 {
+            color: rgb(var(--bs-dark-rgb));
+            font-weight: 600;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #eee;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* --- Footer --- */
+        footer a {
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+        }
+        footer a:hover {
+            color: white !important;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="shadow-sm">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">Real Estate</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html" data-lang-en="Home" data-lang-ar="الرئيسية">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-lang-en="Latest Projects" data-lang-ar="أحدث المشاريع">Latest Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-lang-en="Communities" data-lang-ar="المجتمعات">Communities</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-lang-en="Sustainability" data-lang-ar="الاستدامة">Sustainability</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-center gap-3">
+                        <span class="d-none d-md-inline text-muted small" data-lang-en="Call" data-lang-ar="اتصل">Call</span>
+                        <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-sm btn-lang" data-lang="en">EN</button>
+                            <button type="button" class="btn btn-sm btn-lang" data-lang="ar">AR</button>
+                        </div>
+                        <a href="enquiry.html" class="btn btn-dark btn-sm active" data-lang-en="Enquiry Now" data-lang-ar="استفسر الآن">Enquiry Now</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="enquiry-hero">
+            <div class="container">
+                <h1 class="display-4" data-lang-en="Contact Us" data-lang-ar="تواصل معنا">Contact Us</h1>
+                <p class="lead opacity-75" data-lang-en="Complete the form below and our property advisors will contact you soon." data-lang-ar="أكمل النموذج أدناه وسيقوم مستشارو العقارات لدينا بالاتصال بك قريبًا.">Complete the form below and our property advisors will contact you soon.</p>
+            </div>
+        </section>
+
+        <section class="form-section pb-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="card border-0 shadow-lg p-4 p-md-5">
+                            <form id="enquiry-form" action="https://formspree.io/f/your_unique_id" method="POST">
+                                
+                                <h5 data-lang-en="Inquiry Details" data-lang-ar="تفاصيل الاستفسار">Inquiry Details</h5>
+                                <div class="row g-3 mb-4">
+                                    <div class="col-md-6 col-lg-4">
+                                        <label for="userType" class="form-label" data-lang-en="I am a..." data-lang-ar="أنا...">I am a...</label>
+                                        <select class="form-select" id="userType" name="userType" required>
+                                            <option value="buyer" data-lang-en="Buyer" data-lang-ar="مشتري">Buyer</option>
+                                            <option value="renter" data-lang-en="Renter" data-lang-ar="مستأجر">Renter</option>
+                                            <option value="investor" data-lang-en="Investor" data-lang-ar="مستثمر">Investor</option>
+                                            <option value="agent" data-lang-en="Agent" data-lang-ar="وكيل">Agent</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 col-lg-4">
+                                        <label for="purpose" class="form-label" data-lang-en="Purpose" data-lang-ar="الغرض">Purpose</label>
+                                        <select class="form-select" id="purpose" name="purpose" required>
+                                            <option value="buy" data-lang-en="Buy" data-lang-ar="شراء">Buy</option>
+                                            <option value="rent" data-lang-en="Rent" data-lang-ar="إيجار">Rent</option>
+                                            <option value="lease" data-lang-en="Lease" data-lang-ar="تأجير">Lease</option>
+                                            <option value="investment" data-lang-en="Investment" data-lang-ar="استثمار">Investment</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 col-lg-4">
+                                        <label for="propertyType" class="form-label" data-lang-en="Property Type" data-lang-ar="نوع العقار">Property Type</label>
+                                        <select class="form-select" id="propertyType" name="propertyType" required>
+                                            <option value="residential" data-lang-en="Residential" data-lang-ar="سكني">Residential</option>
+                                            <option value="commercial" data-lang-en="Commercial" data-lang-ar="تجاري">Commercial</option>
+                                            <option value="both" data-lang-en="Both" data-lang-ar="كلاهما">Both</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 col-lg-4">
+                                        <label for="propertyCategory" class="form-label" data-lang-en="Property Category" data-lang-ar="فئة العقار">Property Category</label>
+                                        <select class="form-select" id="propertyCategory" name="propertyCategory" required>
+                                            <option value="apartment" data-lang-en="Apartment" data-lang-ar="شقة">Apartment</option>
+                                            <option value="villa" data-lang-en="Villa" data-lang-ar="فيلا">Villa</option>
+                                            <option value="office" data-lang-en="Office" data-lang-ar="مكتب">Office</option>
+                                            <option value="retail" data-lang-en="Retail" data-lang-ar="محل تجاري">Retail</option>
+                                            <option value="warehouse" data-lang-en="Warehouse" data-lang-ar="مستودع">Warehouse</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 col-lg-4" id="bedrooms-wrapper">
+                                        <label for="bedrooms" class="form-label" data-lang-en="Bedrooms" data-lang-ar="غرف النوم">Bedrooms</label>
+                                        <select class="form-select" id="bedrooms" name="bedrooms">
+                                            <option value="studio" data-lang-en="Studio" data-lang-ar="استوديو">Studio</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4+">4+</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-12 col-lg-4">
+                                        <label for="location" class="form-label" data-lang-en="Preferred Location" data-lang-ar="الموقع المفضل">Preferred Location</label>
+                                        <input type="text" class="form-control" id="location" name="location" placeholder="e.g., Downtown, Marina">
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label" data-lang-en="Budget Range (AED)" data-lang-ar="نطاق الميزانية (درهم)">Budget Range (AED)</label>
+                                        <div class="input-group">
+                                            <input type="number" class="form-control" name="budgetFrom" placeholder="From" data-lang-en-placeholder="From" data-lang-ar-placeholder="من">
+                                            <input type="number" class="form-control" name="budgetTo" placeholder="To" data-lang-en-placeholder="To" data-lang-ar-placeholder="إلى">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <h5 data-lang-en="Contact Information" data-lang-ar="معلومات الاتصال">Contact Information</h5>
+                                <div class="row g-3 mb-4">
+                                    <div class="col-md-6">
+                                        <label for="fullName" class="form-label" data-lang-en="Full Name" data-lang-ar="الاسم الكامل">Full Name</label>
+                                        <input type="text" class="form-control" id="fullName" name="fullName" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="email" class="form-label" data-lang-en="Email Address" data-lang-ar="البريد الإلكتروني">Email Address</label>
+                                        <input type="email" class="form-control" id="email" name="email" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="phone" class="form-label" data-lang-en="Phone Number" data-lang-ar="رقم الهاتف">Phone Number</label>
+                                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="+971 50 123 4567" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label" data-lang-en="Preferred Contact Method" data-lang-ar="طريقة الاتصال المفضلة">Preferred Contact Method</label>
+                                        <div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="contactMethod" id="contactEmail" value="Email" checked>
+                                                <label class="form-check-label" for="contactEmail" data-lang-en="Email" data-lang-ar="البريد الإلكتروني">Email</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="contactMethod" id="contactPhone" value="Phone">
+                                                <label class="form-check-label" for="contactPhone" data-lang-en="Phone" data-lang-ar="الهاتف">Phone</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="contactMethod" id="contactWhatsapp" value="WhatsApp">
+                                                <label class="form-check-label" for="contactWhatsapp" data-lang-en="WhatsApp" data-lang-ar="واتساب">WhatsApp</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="message" class="form-label" data-lang-en="Message / Notes" data-lang-ar="الرسالة / ملاحظات">Message / Notes</label>
+                                        <textarea class="form-control" id="message" name="message" rows="4"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-check mb-4">
+                                            <input class="form-check-input" type="checkbox" name="agreement" id="agreement" required>
+                                            <label class="form-check-label small text-secondary" for="agreement" data-lang-en="I agree to be contacted by your property advisors." data-lang-ar="أوافق على أن يتم الاتصال بي من قبل مستشاريكم العقاريين.">
+                                                I agree to be contacted by your property advisors.
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 text-center">
+                                        <button type="submit" class="btn btn-dark btn-lg px-5" data-lang-en="Send Inquiry" data-lang-ar="إرسال الاستفسار">Send Inquiry</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-dark text-white-50 pt-5 pb-4">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-4">
+                    <h5 class="text-white">Real Estate</h5>
+                    <p class="small" data-lang-en="Building communities for life with world-class properties and developments across Dubai and beyond." data-lang-ar="نبني مجتمعات للحياة من خلال عقارات وتطويرات عالمية المستوى في دبي وخارجها.">Building communities for life with world-class properties and developments across Dubai and beyond.</p>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h5 class="text-white" data-lang-en="Company" data-lang-ar="الشركة">Company</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white-50" data-lang-en="About Us" data-lang-ar="من نحن">About Us</a></li>
+                        <li><a href="#" class="text-white-50" data-lang-en="Careers" data-lang-ar="وظائف">Careers</a></li>
+                        <li><a href="#" class="text-white-50" data-lang-en="News" data-lang-ar="أخبار">News</a></li>
+                    </ul>
+                </div>
+                 <div class="col-6 col-lg-2">
+                    <h5 class="text-white" data-lang-en="Support" data-lang-ar="الدعم">Support</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white-50" data-lang-en="Contact Us" data-lang-ar="اتصل بنا">Contact Us</a></li>
+                        <li><a href="#" class="text-white-50" data-lang-en="Privacy Policy" data-lang-ar="سياسة الخصوصية">Privacy Policy</a></li>
+                        <li><a href="#" class="text-white-50" data-lang-en="Terms" data-lang-ar="الشروط">Terms</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                     <h5 class="text-white" data-lang-en="Contact" data-lang-ar="اتصل">Contact</h5>
+                     <p class="small mb-1">Dubai, United Arab Emirates</p>
+                     <p class="small mb-1">Phone: +971 4 367 3333</p>
+                     <p class="small mb-1">Email: info@realestate.com</p>
+                </div>
+            </div>
+            <hr class="mt-4">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+                <p class="small mb-3 mb-md-0" data-lang-en="© 2025 Real Estate. All Rights Reserved." data-lang-ar="© 2025 العقارات. جميع الحقوق محفوظة.">© 2025 Real Estate. All Rights Reserved.</p>
+                <div class="d-flex gap-4">
+                    <a href="#" class="text-white-50"><i class="bi bi-facebook fs-5"></i></a>
+                    <a href="#" class="text-white-50"><i class="bi bi-instagram fs-5"></i></a>
+                    <a href="#" class="text-white-50"><i class="bi bi-twitter-x fs-5"></i></a>
+                    <a href="#" class="text-white-50"><i class="bi bi-linkedin fs-5"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // --- LANGUAGE TOGGLE SCRIPT ---
+        const langButtons = document.querySelectorAll('.btn-lang');
+        const htmlEl = document.documentElement;
+
+        function setLanguage(lang) {
+            htmlEl.setAttribute('lang', lang);
+            htmlEl.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+
+            document.querySelectorAll('[data-lang-en]').forEach(el => {
+                const key = `lang-${lang}`;
+                if (el.dataset[key]) {
+                    el.innerText = el.dataset[key];
+                }
+            });
+            
+            // Handle placeholders separately
+            document.querySelectorAll('[data-lang-en-placeholder]').forEach(el => {
+                const key = `lang-${lang}-placeholder`;
+                if(el.dataset[key]) {
+                    el.placeholder = el.dataset[key];
+                }
+            });
+
+            langButtons.forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
+
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        langButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                setLanguage(this.dataset.lang);
+            });
+        });
+
+        const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+        setLanguage(savedLang);
+
+
+        // --- CONDITIONAL FORM FIELD SCRIPT ---
+        const propertyTypeSelect = document.getElementById('propertyType');
+        const bedroomsWrapper = document.getElementById('bedrooms-wrapper');
+
+        function toggleBedroomsField() {
+            const selectedType = propertyTypeSelect.value;
+            // Show if "Residential" or "Both" is selected
+            if (selectedType === 'residential' || selectedType === 'both') {
+                bedroomsWrapper.style.display = 'block';
+            } else {
+                bedroomsWrapper.style.display = 'none';
+            }
+        }
+
+        // Initial check on page load
+        toggleBedroomsField();
+
+        // Listen for changes on the property type dropdown
+        propertyTypeSelect.addEventListener('change', toggleBedroomsField);
+    });
+    </script>
+</body>
+</html>
