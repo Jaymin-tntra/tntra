@@ -8,6 +8,8 @@ use PHPMailer\PHPMailer\Exception;
 error_reporting(0);
 ini_set('display_errors', 0);
 
+$curl = curl_init();
+
 // Set the header to indicate the response is JSON
 header('Content-Type: application/json');
 
@@ -157,6 +159,15 @@ try {
 
 // --- FINAL STEP: Send the JSON Response ---
 // This is the ONLY place the script should output the final response.
-echo json_encode($response);
+// echo json_encode($response);
+
+$response = curl_exec($curl);
+$data = json_decode($response, true);
+
+echo json_encode([
+    'success' => true,
+    'message' => 'Thank you! Your inquiry has been submitted successfully.',
+    'data' => $data // assuming you fetched inserted row(s) from Supabase
+]);
 exit;
 

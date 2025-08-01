@@ -335,26 +335,38 @@
                             method: 'POST',
                             body: formData
                         })
-                            .then(response => {
+                            .then(res => {
+                                const response = res.json()
+                                form.reset();
                                 if (!response.ok) throw new Error('Network response was not ok');
-                                return response.json();
-                            })
-                            .then(data => {
-                                formMessage.classList.remove('d-none');
-
-                                if (data.success) {
-                                    successMessage.textContent = data.message;
+                                if (response.status === 200) {
+                                    successMessage.textContent = 'Thank you! Your inquiry has been submitted successfully.';
                                     successMessage.classList.remove('d-none');
-                                    form.reset();
                                 } else {
+                                    errorMessage.textContent = response.message || 'An error occurred. Please try again.';
                                     errorMessage.classList.remove('d-none');
-                                    if (data.debug) console.error('Debug info:', data.debug);
+                                    if (response.debug) console.error('Debug info:', response.debug);
                                 }
+                                return response;
                             })
+                            // .then(data => {
+                            //     console.log("DATA", data)
+                            //     formMessage.classList.remove('d-none');
+
+
+                            //     // if (data.success) {
+                            //     //     successMessage.textContent = data.message;
+                            //     //     successMessage.classList.remove('d-none');
+                            //     // } else {
+                            //     //     errorMessage.textContent = data.message || 'An error occurred. Please try again.';
+                            //     //     errorMessage.classList.remove('d-none');
+                            //     //     if (data.debug) console.error('Debug info:', data.debug);
+                            //     // }
+                            // })
                             .catch(error => {
-                                console.error('Fetch error:', error);
-                                formMessage.classList.remove('d-none');
-                                errorMessage.classList.remove('d-none');
+                                // formMessage.classList.remove('d-none');
+                                // errorMessage.textContent = 'An error occurred. Please try again.';
+                                // errorMessage.classList.remove('d-none');
                             })
                             .finally(() => {
                                 spinner.classList.add('d-none');
