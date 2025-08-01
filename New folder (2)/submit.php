@@ -13,10 +13,6 @@ header('Content-Type: application/json');
 
 // --- Main Response Array ---
 // We will build our response in this array and encode it once at the end.
-$response = [
-    'success' => false,
-    'message' => 'An unknown error occurred.'
-];
 
 // --- Composer's Autoloader for PHPMailer ---
 // Ensure the path is correct relative to your submit.php file
