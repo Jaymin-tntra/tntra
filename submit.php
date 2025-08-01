@@ -5,11 +5,6 @@ use PHPMailer\PHPMailer\Exception;
 header("Access-Control-Allow-Origin: *");
 header('Content-Type: application/json');
 
-$response = [
-    'success' => false,
-    'message' => 'An unknown error occurred.'
-];
-
 require 'vendor/autoload.php';
 
 $isLocal = in_array($_SERVER['REMOTE_ADDR'], ['127.0.0.1', '::1']);
