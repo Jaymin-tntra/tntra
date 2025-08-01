@@ -347,7 +347,6 @@
                                     successMessage.classList.remove('d-none');
                                     form.reset();
                                 } else {
-                                    errorMessage.textContent = data.message || 'An error occurred. Please try again.';
                                     errorMessage.classList.remove('d-none');
                                     if (data.debug) console.error('Debug info:', data.debug);
                                 }
@@ -355,7 +354,6 @@
                             .catch(error => {
                                 console.error('Fetch error:', error);
                                 formMessage.classList.remove('d-none');
-                                errorMessage.textContent = 'An error occurred. Please try again.';
                                 errorMessage.classList.remove('d-none');
                             })
                             .finally(() => {
