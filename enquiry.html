@@ -91,6 +91,7 @@
                                     <div class="alert alert-danger d-none" id="errorMessage"></div>
                                 </div>
                                 <h5 id="form-section-1">Inquiry Details</h5>
+                                <span id="messageSpan"></span>
                                 <div class="row g-3 mb-4">
                                     <div class="col-md-6 col-lg-4">
                                         <label for="userType" class="form-label" id="label-user-type">I am a...</label>
@@ -144,9 +145,10 @@
                                         </select>
                                     </div>
                                     <div class="col-md-12 col-lg-4">
-                                        <label for="sqfarea" class="form-label" id="label-sqfarea">Square feet area</label>
+                                        <label for="sqfarea" class="form-label" id="label-sqfarea">Square feet
+                                            area</label>
                                         <div class="input-icon-wrapper">
-                                             <i class="bi bi-bounding-box input-icon"></i>
+                                            <i class="bi bi-bounding-box input-icon"></i>
                                             <input type="text" class="form-control" id="sqfarea" name="sqfarea"
                                                 placeholder="e.g., 1350" id="placeholder-sqfarea">
                                         </div>
@@ -184,11 +186,13 @@
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <label for="idno" class="form-label" id="label-idno">National ID / Iqama No</label>
+                                        <label for="idno" class="form-label" id="label-idno">National ID / Iqama
+                                            No</label>
                                         <div class="input-icon-wrapper">
                                             <i class="bi bi-person input-icon"></i>
-                                            <input type="text" class="form-control" placeholder="Enter your National ID / Iqama No."
-                                                id="idno" name="idno" required>
+                                            <input type="text" class="form-control"
+                                                placeholder="Enter your National ID / Iqama No." id="idno" name="idno"
+                                                required>
                                             <div class="invalid-feedback d-none" id="error-idno">Please enter your
                                                 National ID / Iqama No.</div>
                                         </div>
@@ -262,6 +266,7 @@
                                             <span class="loading-spinner spinner-border spinner-border-sm me-2 d-none"
                                                 id="spinner"></span>
                                             <span id="submit-btn-text">Send Inquiry</span>
+
                                         </button>
                                     </div>
                                 </div>
@@ -322,6 +327,23 @@
     <script src="js/language-switcher.js"></script>
     <script src="https://www.google.com/recaptcha/api.js?render=6Lf0jZYrAAAAAHUEoTeYFWQ41u9OzGXK0XQgMt6j"></script>
     <script>
+
+
+
+        function handleMessage(key) {
+            const successMessage = document.getElementById('messageSpan');
+            if (key === 'success') {
+                successMessage.textContent = 'Thank you! Your inquiry has been submitted successfully.';
+            } else if (key === 'error') {
+                successMessage.textContent = 'An error occurred. Please try again.';
+            }
+
+
+            setTimeout(() => {
+                successMessage.textContent = '';
+            }, 3000);
+        }
+
         document.addEventListener('DOMContentLoaded', function () {
             grecaptcha.ready(function () {
                 document.getElementById('inquiryForm').addEventListener('submit', function (e) {
@@ -334,6 +356,7 @@
                         const form = document.getElementById("inquiryForm");
                         const formMessage = document.getElementById('formMessage');
                         const successMessage = document.getElementById('successMessage');
+
                         const errorMessage = document.getElementById('errorMessage');
                         const spinner = document.getElementById('spinner');
                         const submitText = document.getElementById('submit-btn-text');
@@ -349,19 +372,25 @@
 
                         const formData = new FormData(form);
 
-                        fetch('http://localhost:8000/submit.php', {
+                        fetch('submit.php', {
                             method: 'POST',
                             body: formData
                         })
                             .then(res => {
                                 const response = res.json()
+
+                                successMessage.textContent = 'Thank you! Your inquiry has been submitted successfully.';
+                                successMessage.classList.remove('d-none');
+
+                                handleMessage('success');
                                 form.reset();
                                 if (!response.ok) throw new Error('Network response was not ok');
                                 if (response.status === 200) {
                                     successMessage.textContent = 'Thank you! Your inquiry has been submitted successfully.';
                                     successMessage.classList.remove('d-none');
                                 } else {
-                                    errorMessage.textContent = response.message || 'An error occurred. Please try again.';
+                                    handleMessage('errror');
+                                    errorMessage.textContent = 'An error occurred. Please try again.';
                                     errorMessage.classList.remove('d-none');
                                     if (response.debug) console.error('Debug info:', response.debug);
                                 }
