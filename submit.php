@@ -65,7 +65,7 @@ $formData = [
     'email' => filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL),
     'phone' => filter_input(INPUT_POST, 'phone', FILTER_SANITIZE_STRING),
     'contactMethod' => filter_input(INPUT_POST, 'contactMethod', FILTER_SANITIZE_STRING),
-    'message' => filter_input(INPUT_POST, 'message', FILTER_SANITIZE_STRING)
+    'message' => filter_input(INPUT_POST, 'message', FILTER_SANITIZE_STRING),
 ];
 
 if (empty($formData['fullName']) || empty($formData['phone']) || !filter_var($formData['email'], FILTER_VALIDATE_EMAIL)) {

@@ -349,7 +349,7 @@
 
                         const formData = new FormData(form);
 
-                        fetch('submit.php', {
+                        fetch('http://localhost:8000/submit.php', {
                             method: 'POST',
                             body: formData
                         })
