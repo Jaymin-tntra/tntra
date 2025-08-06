@@ -107,6 +107,9 @@
     "label-bedrooms": "غرف النوم",
     "select-option-4": "اختر عدد غرف النوم",
     "option-studio": "استوديو",
+
+    "label-sqfarea": "مساحة قدم مربع",
+    "placeholder-sqfarea": "1350",
     
     "label-location": "الموقع المفضل",
     "placeholder-location": "مثال: وسط المدينة، مارينا",

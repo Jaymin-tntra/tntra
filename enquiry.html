@@ -36,9 +36,9 @@
 <body>
 
     <header class="sticky-top shadow-sm">
-        <nav class="navbar navbar-expand-lg bg-off-white py-3">
+        <nav class="navbar navbar-expand-lg bg-off-white py-0">
             <div class="container">
-                <a class="navbar-brand text-primary-violet" href="index.html" id="brand-name">Real Estate</a>
+                <a class="navbar-brand" href="index.html"><img src="logo.png" alt="" /></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -144,6 +144,14 @@
                                         </select>
                                     </div>
                                     <div class="col-md-12 col-lg-4">
+                                        <label for="sqfarea" class="form-label" id="label-sqfarea">Square feet area</label>
+                                        <div class="input-icon-wrapper">
+                                             <i class="bi bi-bounding-box input-icon"></i>
+                                            <input type="text" class="form-control" id="sqfarea" name="sqfarea"
+                                                placeholder="e.g., 1350" id="placeholder-sqfarea">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 col-lg-4">
                                         <label for="location" class="form-label" id="label-location">Preferred
                                             Location</label>
                                         <div class="input-icon-wrapper">
@@ -173,6 +181,16 @@
                                                 id="fullname" name="fullName" required>
                                             <div class="invalid-feedback d-none" id="error-fullname">Please enter your
                                                 full name.</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="idno" class="form-label" id="label-idno">National ID / Iqama No</label>
+                                        <div class="input-icon-wrapper">
+                                            <i class="bi bi-person input-icon"></i>
+                                            <input type="text" class="form-control" placeholder="Enter your National ID / Iqama No."
+                                                id="idno" name="idno" required>
+                                            <div class="invalid-feedback d-none" id="error-idno">Please enter your
+                                                National ID / Iqama No.</div>
                                         </div>
                                     </div>
                                     <div class="col-md-6">

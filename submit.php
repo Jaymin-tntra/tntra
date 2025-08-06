@@ -56,10 +56,12 @@ $formData = [
     'purpose' => filter_input(INPUT_POST, 'purpose', FILTER_SANITIZE_STRING),
     'propertyType' => filter_input(INPUT_POST, 'propertyType', FILTER_SANITIZE_STRING),
     'bedrooms' => filter_input(INPUT_POST, 'bedrooms', FILTER_SANITIZE_STRING),
+    'sqfarea' => filter_input(INPUT_POST, 'sqfarea', FILTER_SANITIZE_STRING),
     'location' => filter_input(INPUT_POST, 'location', FILTER_SANITIZE_STRING),
     'budgetFrom' => filter_input(INPUT_POST, 'budgetFrom', FILTER_SANITIZE_NUMBER_INT),
     'budgetTo' => filter_input(INPUT_POST, 'budgetTo', FILTER_SANITIZE_NUMBER_INT),
     'fullName' => filter_input(INPUT_POST, 'fullName', FILTER_SANITIZE_STRING),
+    'idno' => filter_input(INPUT_POST, 'idno', FILTER_SANITIZE_STRING),
     'email' => filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL),
     'phone' => filter_input(INPUT_POST, 'phone', FILTER_SANITIZE_STRING),
     'contactMethod' => filter_input(INPUT_POST, 'contactMethod', FILTER_SANITIZE_STRING),
@@ -82,18 +84,20 @@ if (!isset($_POST['agreement'])) {
 $emailBody = "
     <h2>New Property Inquiry</h2>
     <hr>
+    <h3>Contact Information</h3>
+    <p><strong>Full Name:</strong> " . htmlspecialchars($formData['fullName']) . "</p>
+    <p><strong>National ID / Iqama No:</strong> " . htmlspecialchars($formData['idno']) . "</p>
+    <p><strong>Email:</strong> " . htmlspecialchars($formData['email']) . "</p>
+    <p><strong>Phone:</strong> " . htmlspecialchars($formData['phone']) . "</p>
+    <p><strong>Preferred Contact Method:</strong> " . htmlspecialchars($formData['contactMethod']) . "</p>
     <h3>Inquiry Details</h3>
     <p><strong>I am a:</strong> " . htmlspecialchars($formData['userType']) . "</p>
     <p><strong>Purpose:</strong> " . htmlspecialchars($formData['purpose']) . "</p>
     <p><strong>Property Type:</strong> " . htmlspecialchars($formData['propertyType']) . "</p>
     <p><strong>Bedrooms:</strong> " . htmlspecialchars($formData['bedrooms'] ?? 'Not specified') . "</p>
+    <p><strong>Square feet area:</strong> " . htmlspecialchars($formData['sqfarea'] ?? 'Not specified') . "</p>
     <p><strong>Preferred Location:</strong> " . htmlspecialchars($formData['location'] ?? 'Not specified') . "</p>
-    <p><strong>Budget Range (AED):</strong> " . htmlspecialchars($formData['budgetFrom']) . " - " . htmlspecialchars($formData['budgetTo']) . "</p>
-    <h3>Contact Information</h3>
-    <p><strong>Full Name:</strong> " . htmlspecialchars($formData['fullName']) . "</p>
-    <p><strong>Email:</strong> " . htmlspecialchars($formData['email']) . "</p>
-    <p><strong>Phone:</strong> " . htmlspecialchars($formData['phone']) . "</p>
-    <p><strong>Preferred Contact Method:</strong> " . htmlspecialchars($formData['contactMethod']) . "</p>
+    <p><strong>Budget Range (AED):</strong> " . htmlspecialchars($formData['budgetFrom']) . " - " . htmlspecialchars($formData['budgetTo']) . "</p>    
     <p><strong>Message:</strong><br>" . nl2br(htmlspecialchars($formData['message'])) . "</p>
 ";
 
@@ -109,7 +113,7 @@ try {
     $mail->Port = 465;
 
     $mail->setFrom('support@tntra.io', 'Property Inquiry');
-    $mail->addAddress('amin.tai@tntra.io', 'Recipient Name');
+    $mail->addAddress('jaymin.trivedi@tntra.io', 'Recipient Name');
     $mail->addReplyTo($formData['email'], $formData['fullName']);
     $mail->isHTML(true);
     $mail->Subject = 'New Property Inquiry from ' . $formData['fullName'];
@@ -132,6 +136,7 @@ try {
     ]);
     curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode([
         'full_name' => $formData['fullName'],
+        'idno' => $formData['idno'],
         'email' => $formData['email'],
         'phone_no' => $formData['phone'],
         'contact_method' => $formData['contactMethod'],
@@ -139,6 +144,7 @@ try {
         'purpose' => $formData['purpose'],
         'property_type' => $formData['propertyType'],
         'bedrooms' => $formData['bedrooms'],
+        'sqfarea' => $formData['sqfarea'],
         'preferred_location' => $formData['location'], // Hardcoded as per context
         'budget_range' => $budgetRange,
         'message' => $formData['message']

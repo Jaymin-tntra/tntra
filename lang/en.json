@@ -107,6 +107,9 @@
     "label-bedrooms": "Bedrooms",
     "select-option-4": "Select bedrooms",
     "option-studio": "Studio",
+
+    "label-sqfarea": "Square feet area",
+    "placeholder-sqfarea": "e.g., 1350",
     
     "label-location": "Preferred Location",
     "placeholder-location": "e.g., Downtown, Marina",

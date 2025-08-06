@@ -254,6 +254,7 @@
             left: auto;
             right: 0.75rem;
         }
+        .form-check-input{border:2px solid #c1c1c1;}
 textarea{resize: none;}
         /* Validation Feedback */
         .is-valid .form-control, .is-valid .form-select {
